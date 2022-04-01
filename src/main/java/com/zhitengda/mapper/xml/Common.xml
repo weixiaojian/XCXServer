@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhitengda.mapper.CommonMapper">
+    <!--获取单号-->
+    <select id="getOrderCode" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT F_GET_ORDER_CODE(#{from}) AS ORDER_CODE FROM DUAL
+    </select>
+
+    <!--校验订单号是否使用-->
+    <select id="checkBillCode" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM TAB_ORDER T WHERE T.BILL_CODE = #{billCode}
+    </select>
+
+    <!--查询下单常量配置-->
+    <select id="getOrderConstant" parameterType="java.lang.String" resultType="com.zhitengda.vo.OrderConstantDto">
+        SELECT DIC_CODE,DIC_VALUE,DIC_VALUE_NAME,DIC_DIS_VALUE FROM T_SYS_DICTIONARY_DETAIL WHERE REC_FLAG=1 AND DIC_CODE = #{dicCode}
+    </select>
+
+    <!--根据运单号获取绑定的所属网点-->
+    <select id="getSendSiteByBillCode" parameterType="java.lang.String" resultType="com.zhitengda.entity.Site">
+        SELECT USE_SITE AS siteName, USE_SITE_CODE AS siteCode
+          FROM TAB_PRE_QRCODE_DETAIL
+         WHERE BILL_CODE = #{billCode}
+    </select>
+
+    <!--获取寄件网点面单库存-->
+    <select id="checkInventory" parameterType="java.lang.String" resultType="java.util.Map">
+        SELECT *
+            FROM DUAL
+            LEFT JOIN (SELECT A.USER_SITE_CODE,
+                            A.USER_SITE,
+                            (NVL(A.QUANTITY, 0) +
+                            NVL((SELECT SUM(T.STOCK_CUR_QUANTITY)
+                                   FROM TAB_ELECTRONIC_STOCK_DETAIL T
+                                  WHERE T.BL_CONFIRM = 2
+                                    AND T.USER_SITE_CODE = A.USER_SITE_CODE),
+                                 0)) AS QUANTITY
+                       FROM TAB_ELECTRONIC_STOCK A
+                      WHERE A.USER_SITE_CODE = #{sendSiteCode})
+            ON 1 = 1
+    </select>
+
+    <!--计算运费-->
+    <select id="trackFreight" parameterType="com.zhitengda.vo.TrackFreightVo" resultType="java.math.BigDecimal">
+        select Calc_Price('运费公布价',
+                  #{goodsWeight},
+                  '8888888',
+                  #{sendCity},
+                  null,
+                  #{acceptProvince},
+                  #{acceptCity},
+                  #{acceptCounty},
+                  '汽运',
+                  '',
+                  '',
+                  '',
+                  '',
+                  to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss')) as TOPAYMENT
+         from dual
+    </select>
+
+    <!--根据小程序的openId查询公众号的openId-->
+    <select id="findGzhOpenId" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT B.OPEN_ID
+          FROM TAB_WX_USER A
+          LEFT JOIN TAB_WX_USER_GZH B
+            ON A.UNIONID = B.UNIONID
+         WHERE A.OPEN_ID = #{openId}
+    </select>
+
+    <!--查询轨迹-->
+    <select id="getScanBillCode" parameterType="java.lang.String" resultType="com.zhitengda.vo.RetScanPathDto">
+        SELECT T.*
+            FROM (SELECT T.BILL_CODE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.SCAN_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       T.SCAN_TYPE,
+                       T.SCAN_SITE,
+                       T.PRE_OR_NEXT_STATION,
+                       NVL(E.MOBILE_PHONE, E.PHONE) AS PHONE,
+                       T.SCAN_MAN
+                  FROM TAB_SCAN_REC T
+                  LEFT JOIN TAB_EMPLOYEE E
+                    ON T.SCAN_MAN_CODE = E.EMPLOYEE_CODE
+                 WHERE T.BILL_CODE = #{billCode}
+                UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.SCAN_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       T.SCAN_TYPE,
+                       T.SCAN_SITE,
+                       T.PRE_OR_NEXT_STATION,
+                       '' AS PHONE,
+                       '' AS SCAN_MAN
+                  FROM TAB_SCAN_COME T
+                 WHERE T.BILL_CODE = #{billCode}
+                UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.SCAN_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       T.SCAN_TYPE,
+                       T.SCAN_SITE,
+                       T.PRE_OR_NEXT_STATION,
+                       '' AS PHONE,
+                       '' AS SCAN_MAN
+                  FROM TAB_SCAN_SEND T
+                 WHERE T.BILL_CODE = #{billCode}
+                UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.SCAN_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       T.SCAN_TYPE,
+                       T.SCAN_SITE,
+                       NVL(S.SALE_PHONE, S.PHONE) AS PRE_OR_NEXT_STATION,
+                       T.DISPATCH_OR_SEND_MAN_PHONE AS PHONE,
+                       T.DISPATCH_OR_SEND_MAN AS SCAN_MAN
+                  FROM TAB_SCAN_DISP T
+                  LEFT JOIN TAB_SITE S
+                    ON T.SCAN_SITE_CODE = S.SITE_CODE
+                 WHERE T.BILL_CODE = #{billCode}
+                UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.SIGN_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.SIGN_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.SIGN_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       '签收' AS SCAN_TYPE,
+                       T.SIGN_SITE AS SCAN_SITE,
+                       S.PHONE AS PRE_OR_NEXT_STATION,
+                       NVL(E.MOBILE_PHONE, E.PHONE) AS PHONE,
+                       T.SIGN_MAN AS SCAN_MAN
+                  FROM TAB_SIGN T
+                  LEFT JOIN TAB_EMPLOYEE E
+                    ON T.RECORD_MAN_CODE = E.EMPLOYEE_CODE
+                  LEFT JOIN TAB_SITE S
+                    ON T.RECORD_SITE_CODE = S.SITE_CODE
+                 WHERE T.BILL_CODE = #{billCode}
+                 UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.REGISTER_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.REGISTER_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.REGISTER_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       '退件' AS SCAN_TYPE,
+                       T.RETURN_SITE AS SCAN_SITE,
+                       T.RETURN_REASON AS PRE_OR_NEXT_STATION,
+                       '' AS PHONE,
+                       T.RETURN_MAN AS SCAN_MAN
+                  FROM TAB_RETURN_BILL T
+                 WHERE T.BILL_CODE =  #{billCode}
+                UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.REGISTER_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.REGISTER_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.REGISTER_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       '问题件' AS SCAN_TYPE,
+                       T.REGISTER_SITE AS SCAN_SITE,
+                       T.PROBLEM_CAUSE AS PRE_OR_NEXT_STATION,
+                       '' AS PHONE,
+                       T.REGISTER_MAN AS SCAN_MAN
+                  FROM TAB_PROBLEM T
+                 WHERE T.BILL_CODE =  #{billCode}
+                UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.SIGN_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.SIGN_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.SIGN_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       '异常签收' AS SCAN_TYPE,
+                       T.RECORD_SITE AS SCAN_SITE,
+                       '' AS PRE_OR_NEXT_STATION,
+                       '' AS PHONE,
+                       T.SIGN_MAN AS SCAN_MAN
+                  FROM TAB_SIGN_EXCEPTION T
+                 WHERE T.BILL_CODE =  #{billCode}
+                UNION ALL
+                SELECT T.BILL_CODE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd hh24:mi:ss') AS SCAN_DATE,
+                       TO_CHAR(T.SCAN_DATE, 'yyyy-MM-dd') AS SCAN_DATE2,
+                       TO_CHAR(T.SCAN_DATE, 'hh24:mi:ss') AS SCAN_DATE3,
+                       T.SCAN_TYPE,
+                       T.SCAN_SITE,
+                       '' AS PRE_OR_NEXT_STATION,
+                       '' AS PHONE,
+                       T.SCAN_MAN
+                  FROM TAB_SCAN_OTHER T
+                 WHERE SCAN_TYPE IN ('拦截','取消拦截','取消退件','运单取消')
+                   AND T.BILL_CODE = #{billCode}) T
+            ORDER BY SCAN_DATE DESC
+    </select>
+
+    <!--根据订单号或运单号查询订单详情-->
+    <select id="getOrderByOrderBill" parameterType="com.zhitengda.entity.Order" resultType="com.zhitengda.entity.Order">
+         SELECT A.ORDER_BILL,
+                A.BILL_CODE,
+                A.ORDER_TYPE,
+                A.REGISTER_SITE,
+                A.REGISTER_SITE_CODE,
+                A.REGISTER_DATE,
+                A.REGISTER_MAN,
+                A.REGISTER_MAN_CODE,
+                A.DELIVERY_MODE,
+                A.DELIVERY_SITE,
+                A.DELIVERY_SITE_CODE,
+                A.PICK_FINISH_DATE,
+                A.PICK_FAIL_REASON,
+                A.CUSTOMER_CODE,
+                A.CUSTOMER_NAME,
+                A.SEND_COUNTRY,
+                A.SEND_PROVINCE,
+                A.SEND_CITY,
+                A.SEND_COUNTY,
+                A.SEND_TOWN,
+                A.SEND_MAN_COMPANY,
+                A.SEND_MAN_ADDRESS,
+                A.SEND_ZIP_CODE,
+                A.SEND_MAN,
+                A.SEND_MAN_PHONE,
+                A.SEND_MAN_MOBILE,
+                A.ACCEPT_COUNTRY,
+                A.ACCEPT_PROVINCE,
+                A.ACCEPT_CITY,
+                A.ACCEPT_COUNTY,
+                A.ACCEPT_TOWN,
+                A.ACCEPT_MAN_COMPANY,
+                A.ACCEPT_MAN_ADDRESS,
+                A.ACCEPT_ZIP_CODE,
+                A.ACCEPT_MAN,
+                A.ACCEPT_MAN_PHONE,
+                A.ACCEPT_MAN_MOBILE,
+                A.BUSINESS_TYPE,
+                A.PRODUCT_TYPE,
+                A.GOODS_NAME,
+                A.GOODS_VOLUME,
+                A.GOODS_WEIGHT,
+                A.PACKING_PIECE,
+                A.GOODS_PAYMENT,
+                A.GOODS_PAYMENT_CURRENCY,
+                A.REMARK,
+                A.DATA_FROM,
+                A.MODIFIER,
+                A.MODIFIER_CODE,
+                A.MODIFY_DATE,
+                A.MODIFY_SITE,
+                A.MODIFY_SITE_CODE,
+                A.REC_MAN,
+                A.REC_MAN_CODE,
+                A.BL_PRINT,
+                A.SEND_SITE,
+                A.SEND_SITE_CODE,
+                A.DISPATCH_SITE,
+                A.DISPATCH_SITE_CODE,
+                A.OPEN_ID,
+                A.CREATE_DATE,
+                A.BILL_CODE,
+                A.PAYMENT_TYPE,
+                A.REAL_NAME,
+                A.REAL_ID_CODE,
+                A.REAL_ID_TYPE,
+                A.FREIGHT,
+                A.TOPAYMENT,
+                A.INSURED_VALUE,
+                A.CUSTOMER_DELIVERY_BEGIN_TIME,
+                A.CUSTOMER_DELIVERY_END_TIME,
+                A.GROUP_ID,
+                A.GROUP_MEMBER,
+                NVL(B.BILL_STATUS, A.ORDER_STATUS) AS BILL_STATUS
+          FROM TAB_ORDER A
+          LEFT JOIN TAB_BILL_STATUS B
+            ON A.BILL_CODE = B.BILL_CODE
+        <where>
+            <if test="openId != null and openId != ''">
+                AND A.OPEN_ID = #{openId}
+            </if>
+            <if test="orderBill != null and orderBill != ''">
+                AND A.ORDER_BILL = #{orderBill}
+            </if>
+            <if test="billCode != null and billCode != ''">
+                AND A.BILL_CODE = #{billCode}
+            </if>
+        </where>
+    </select>
+
+    <!--查询未打印/已打印-->
+    <select id="findMyOrderPage" parameterType="com.zhitengda.vo.PageVo" resultType="com.zhitengda.entity.Order">
+        SELECT * FROM (
+            SELECT B.ORDER_BILL,
+                B.ORDER_TYPE,
+                B.REGISTER_SITE,
+                B.REGISTER_SITE_CODE,
+                B.REGISTER_DATE,
+                B.REGISTER_MAN,
+                B.REGISTER_MAN_CODE,
+                B.DELIVERY_MODE,
+                B.DELIVERY_SITE,
+                B.DELIVERY_SITE_CODE,
+                B.PICK_FINISH_DATE,
+                B.PICK_FAIL_REASON,
+                B.CUSTOMER_CODE,
+                B.CUSTOMER_NAME,
+                B.SEND_COUNTRY,
+                B.SEND_PROVINCE,
+                B.SEND_CITY,
+                B.SEND_COUNTY,
+                B.SEND_TOWN,
+                B.SEND_MAN_COMPANY,
+                B.SEND_MAN_ADDRESS,
+                B.SEND_ZIP_CODE,
+                B.SEND_MAN,
+                B.SEND_MAN_PHONE,
+                B.SEND_MAN_MOBILE,
+                B.ACCEPT_COUNTRY,
+                B.ACCEPT_PROVINCE,
+                B.ACCEPT_CITY,
+                B.ACCEPT_COUNTY,
+                B.ACCEPT_TOWN,
+                B.ACCEPT_MAN_COMPANY,
+                B.ACCEPT_MAN_ADDRESS,
+                B.ACCEPT_ZIP_CODE,
+                B.ACCEPT_MAN,
+                B.ACCEPT_MAN_PHONE,
+                B.ACCEPT_MAN_MOBILE,
+                B.BUSINESS_TYPE,
+                B.PRODUCT_TYPE,
+                B.GOODS_NAME,
+                B.GOODS_VOLUME,
+                B.GOODS_WEIGHT,
+                B.PACKING_PIECE,
+                B.GOODS_PAYMENT,
+                B.GOODS_PAYMENT_CURRENCY,
+                B.REMARK,
+                B.DATA_FROM,
+                B.MODIFIER,
+                B.MODIFIER_CODE,
+                B.MODIFY_DATE,
+                B.MODIFY_SITE,
+                B.MODIFY_SITE_CODE,
+                B.REC_MAN,
+                B.REC_MAN_CODE,
+                B.BL_PRINT,
+                B.SEND_SITE,
+                B.SEND_SITE_CODE,
+                B.DISPATCH_SITE,
+                B.DISPATCH_SITE_CODE,
+                B.OPEN_ID,
+                B.CREATE_DATE,
+                B.BILL_CODE,
+                B.PAYMENT_TYPE,
+                B.REAL_NAME,
+                B.REAL_ID_CODE,
+                B.REAL_ID_TYPE,
+                B.FREIGHT,
+                B.TOPAYMENT,
+                B.INSURED_VALUE,
+                B.CUSTOMER_DELIVERY_BEGIN_TIME,
+                B.CUSTOMER_DELIVERY_END_TIME,
+                B.GROUP_ID,
+                B.GROUP_MEMBER,
+                NVL(C.BILL_STATUS, B.ORDER_STATUS) AS BILL_STATUS
+            FROM TAB_ORDER B
+            LEFT JOIN TAB_BILL_STATUS C
+                ON B.BILL_CODE = C.BILL_CODE
+            <where>
+                <if test="pageVo.billCode != null and pageVo.billCode != ''">
+                    AND B.ORDER_BILL LIKE '%${pageVo.billCode}%' OR B.BILL_CODE LIKE '%${pageVo.billCode}%'
+                </if>
+                <if test="pageVo.openId != null and pageVo.openId != ''">
+                    AND B.OPEN_ID = #{pageVo.openId}
+                </if>
+                <if test="pageVo.sendSiteCode != null and pageVo.sendSiteCode != ''">
+                    AND B.SEND_SITE_CODE = #{pageVo.sendSiteCode}
+                </if>
+                <if test="pageVo.customerCode != null and pageVo.customerCode != ''">
+                    AND B.CUSTOMER_CODE = #{pageVo.customerCode}
+                </if>
+                <if test="pageVo.startDate != null and pageVo.startDate != '' and pageVo.endDate != null and pageVo.endDate != ''">
+                    AND B.CREATE_DATE BETWEEN TO_DATE(#{pageVo.startDate}, 'yyyy-mm-dd hh24:mi:ss')
+                    AND TO_DATE(#{pageVo.endDate}, 'yyyy-mm-dd hh24:mi:ss')
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '未打印'">
+                    AND NVL(B.BL_PRINT, 0) = 0
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) != '已取消'
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '已打印'">
+                    AND NVL(B.BL_PRINT, 0) = 1
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) != '已取消'
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '待揽收'">
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) IN ('已分网点','已分业务员')
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '已揽收'">
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) = '已揽收'
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '在途'">
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) IN ('已发件','已到件','分拨发件','分拨到件')
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '派件中'">
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) = '已派件'
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '已签收'">
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) IN ('已签收','已异常签收')
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus == '已取消'">
+                    AND NVL(C.BILL_STATUS, B.ORDER_STATUS) in('已取消','运单取消')
+                </if>
+                <if test="pageVo.name != null and pageVo.name != ''">
+                    AND B.ACCEPT_MAN = #{pageVo.name}
+                </if>
+                <if test="pageVo.phone != null and pageVo.phone != ''">
+                    AND B.ACCEPT_MAN_MOBILE = #{pageVo.phone}
+                </if>
+                AND B.DATA_FROM IN ('K13', 'TMS', 'OMS', '微信')
+                ORDER BY B.CREATE_DATE DESC
+            </where>
+            )
+    </select>
+
+    <!--统计我收的-->
+    <select id="getRecOrderCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1) FROM TAB_ORDER A LEFT JOIN TAB_BILL_STATUS B ON A.BILL_CODE=B.BILL_CODE
+         WHERE A.ACCEPT_MAN_MOBILE = #{acceptManMobile}  AND B.BILL_STATUS IN ('已派件','在途','已揽收','已签收')
+    </select>
+
+    <!--分页查询我的运单-->
+    <select id="findMyWaybillPage" parameterType="com.zhitengda.vo.PageVo" resultType="com.zhitengda.entity.Bill">
+        SELECT * FROM (
+                SELECT B.ORDER_BILL_CODE,
+                B.BILL_CODE,
+                B.REGISTER_SITE,
+                B.REGISTER_SITE_CODE,
+                B.REGISTER_DATE,
+                B.REGISTER_MAN,
+                B.REGISTER_MAN_CODE,
+                B.CUSTOMER_CODE,
+                B.CUSTOMER_NAME,
+                B.SEND_PROVINCE,
+                B.SEND_CITY,
+                B.SEND_COUNTY,
+                B.SEND_TOWN,
+                B.SEND_MAN_COMPANY,
+                B.SEND_MAN_ADDRESS,
+                B.SEND_MAN,
+                B.SEND_MAN_PHONE,
+                B.ACCEPT_PROVINCE,
+                B.ACCEPT_CITY,
+                B.ACCEPT_COUNTY,
+                B.ACCEPT_TOWN,
+                B.ACCEPT_MAN_COMPANY,
+                B.ACCEPT_MAN_ADDRESS,
+                B.ACCEPT_MAN,
+                B.ACCEPT_MAN_PHONE,
+                B.GOODS_NAME,
+                B.GOODS_PAYMENT,
+                B.REMARK,
+                B.DATA_FROM,
+                B.MODIFIER,
+                B.MODIFIER_CODE,
+                B.MODIFY_DATE,
+                B.MODIFY_SITE,
+                B.MODIFY_SITE_CODE,
+                B.SEND_SITE,
+                B.SEND_SITE_CODE,
+                B.DISPATCH_SITE,
+                B.DISPATCH_SITE_CODE,
+                B.PAYMENT_TYPE,
+                B.REAL_NAME,
+                B.REAL_ID_CODE,
+                B.REAL_ID_TYPE,
+                B.FREIGHT,
+                B.TOPAYMENT,
+                C.BILL_STATUS,
+                D.SETTLEMENT_WEIGHT
+            FROM TAB_BILL B
+            LEFT JOIN TAB_BILL_STATUS C
+                ON B.BILL_CODE = C.BILL_CODE
+            LEFT JOIN TAB_ACCOUNT_LIST D
+                ON C.BILL_CODE = D.BILL_CODE
+                AND D.SCAN_SITE_CODE = D.SEND_FINANCE_CENTER_CODE
+            <if test="pageVo.openId != null and pageVo.openId != ''">
+                LEFT JOIN TAB_ORDER A
+                    ON B.BILL_CODE = A.BILL_CODE
+            </if>
+            <where>
+                <if test="pageVo.openId != null and pageVo.openId != ''">
+                    AND A.OPEN_ID = #{pageVo.openId}
+                </if>
+                <if test="pageVo.billCode != null and pageVo.billCode != ''">
+                    AND (B.ORDER_BILL_CODE LIKE '%${pageVo.billCode}%' OR B.BILL_CODE LIKE '%${pageVo.billCode}%')
+                </if>
+                <if test="pageVo.sendSiteCode != null and pageVo.sendSiteCode != ''">
+                    AND B.SEND_SITE_CODE = #{pageVo.sendSiteCode}
+                </if>
+                <if test="pageVo.customerCode != null and pageVo.customerCode != ''">
+                    AND B.CUSTOMER_CODE = #{pageVo.customerCode}
+                </if>
+                <if test="pageVo.startDate != null and pageVo.startDate != '' and pageVo.endDate != null and pageVo.endDate != ''">
+                    AND B.REGISTER_DATE BETWEEN TO_DATE(#{pageVo.startDate}, 'yyyy-mm-dd hh24:mi:ss')
+                        AND TO_DATE(#{pageVo.endDate}, 'yyyy-mm-dd hh24:mi:ss')
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '已揽收'">
+                    AND C.BILL_STATUS = '已揽收'
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '在途'">
+                    AND C.BILL_STATUS IN ('已发件','已到件','分拨发件','分拨到件')
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '已派件'">
+                    AND C.BILL_STATUS = '已派件'
+                </if>
+                <if test="pageVo.billStatus != null and pageVo.billStatus != '' and pageVo.billStatus == '已签收'">
+                    AND C.BILL_STATUS IN ('已签收','已异常签收')
+                </if>
+                <if test="pageVo.name != null and pageVo.name != ''">
+                    AND B.ACCEPT_MAN = #{pageVo.name}
+                </if>
+                <if test="pageVo.phone != null and pageVo.phone != ''">
+                    AND B.ACCEPT_MAN_PHONE = #{pageVo.phone}
+                </if>
+                ORDER BY B.REGISTER_DATE DESC
+            </where>
+            )
+    </select>
+
+    <!--获取订单打印数据-->
+    <select id="getOrderPrint" parameterType="java.util.Map" resultType="com.zhitengda.entity.Bill">
+            SELECT ORDER_BILL_CODE,
+                BILL_CODE,
+                REGISTER_DATE,
+                PIECE_NUMBER,
+                DESTINATION_CENTER,
+                DESTINATION_CENTER_CODE,
+                SEND_PROVINCE,
+                SEND_PROVINCE,
+                SEND_CITY,
+                SEND_COUNTY,
+                SEND_TOWN,
+                SEND_MAN_ADDRESS,
+                SEND_MAN,
+                SEND_MAN_PHONE,
+                SEND_MAN_COMPANY,
+                ACCEPT_PROVINCE,
+                ACCEPT_CITY,
+                ACCEPT_COUNTY,
+                ACCEPT_TOWN,
+                ACCEPT_MAN_ADDRESS,
+                ACCEPT_MAN,
+                ACCEPT_MAN_PHONE,
+                ACCEPT_MAN_COMPANY,
+                GOODS_NAME,
+                REMARK,
+                ONE_CODE,
+                TWO_CODE,
+                THREE_CODE,
+                FOUR_CODE,
+                BILL_CODE_SUB1,
+                SEND_SITE,
+                SEND_SITE_CODE,
+                BL_SITE_MATCH_YD
+            FROM TAB_BILL
+            <where>
+                <if test="orderBills != null">
+                    ORDER_BILL_CODE IN
+                    <foreach collection="orderBills" item="orderBill" separator="," open="("  close=")">
+                        #{orderBill}
+                    </foreach>
+                    ORDER BY INSTR(#{orderBill},ORDER_BILL_CODE)
+                </if>
+            </where>
+    </select>
+
+    <!--下单未揽收发送部门消息到K13-->
+    <insert id="sendRecMsg" parameterType="java.util.Map">
+        INSERT INTO TAB_NOTICE T (
+        <trim suffixOverrides=",">
+            <if test="BILL_CODE != null and BILL_CODE != ''">
+                T.BILL_CODE,
+            </if>
+            <if test="TITLE != null and TITLE != ''">
+                T.TITLE,
+            </if>
+            <if test="NOTICE_NAME != null and NOTICE_NAME != ''">
+                T.NOTICE_NAME,
+            </if>
+            <if test="SPECIFY_PERSON != null and SPECIFY_PERSON != ''">
+                T.SPECIFY_PERSON,
+            </if>
+            <if test="SEND_SITE != null and SEND_SITE != ''">
+                T.SEND_SITE,
+            </if>
+            <if test="SEND_SITE_CODE != null and SEND_SITE_CODE != ''">
+                T.SEND_SITE_CODE,
+            </if>
+            <if test="PERSON != null and PERSON != ''">
+                T.PERSON,
+            </if>
+            <if test="ALLOW_RESTORE != null">
+                T.ALLOW_RESTORE,
+            </if>
+            <if test="CONTENT != null and CONTENT != ''">
+                T.CONTENT,
+            </if>
+            <if test="BL_MUST_SEE != null">
+                T.BL_MUST_SEE,
+            </if>
+            <if test="BL_MUST_REPLY != null">
+                T.BL_MUST_REPLY,
+            </if>
+            <if test="PERSON_CODE != null and PERSON_CODE != ''">
+                T.PERSON_CODE,
+            </if>
+            <if test="BL_FROM != null">
+                T.BL_FROM,
+            </if>
+            <if test="REC_SITE != null and REC_SITE != ''">
+                T.REC_SITE,
+            </if>
+            <if test="REC_SITE_CODE != null and REC_SITE_CODE != ''">
+                T.REC_SITE_CODE,
+            </if>
+            <if test="BL_DEPT != null">
+                T.BL_DEPT,
+            </if>
+            <if test="REC_DEPT != null and REC_DEPT != ''">
+                T.REC_DEPT,
+            </if>
+        </trim>
+        )VALUES(
+        <trim suffixOverrides=",">
+            <if test="BILL_CODE != null and BILL_CODE != ''">
+                #{BILL_CODE},
+            </if>
+            <if test="TITLE != null and TITLE != ''">
+                #{TITLE},
+            </if>
+            <if test="NOTICE_NAME != null and NOTICE_NAME != ''">
+                #{NOTICE_NAME},
+            </if>
+            <if test="SPECIFY_PERSON != null and SPECIFY_PERSON != ''">
+                #{SPECIFY_PERSON},
+            </if>
+            <if test="SEND_SITE != null and SEND_SITE != ''">
+                #{SEND_SITE},
+            </if>
+            <if test="SEND_SITE_CODE != null and SEND_SITE_CODE != ''">
+                #{SEND_SITE_CODE},
+            </if>
+            <if test="PERSON != null and PERSON != ''">
+                #{PERSON},
+            </if>
+            <if test="ALLOW_RESTORE != null">
+                #{ALLOW_RESTORE},
+            </if>
+            <if test="CONTENT != null and CONTENT != ''">
+                #{CONTENT},
+            </if>
+            <if test="BL_MUST_SEE != null">
+                #{BL_MUST_SEE},
+            </if>
+            <if test="BL_MUST_REPLY != null">
+                #{BL_MUST_REPLY},
+            </if>
+            <if test="PERSON_CODE != null and PERSON_CODE != ''">
+                #{PERSON_CODE},
+            </if>
+            <if test="BL_FROM != null">
+                #{BL_FROM},
+            </if>
+            <if test="REC_SITE != null and REC_SITE != ''">
+                #{REC_SITE},
+            </if>
+            <if test="REC_SITE_CODE != null and REC_SITE_CODE != ''">
+                #{REC_SITE_CODE},
+            </if>
+            <if test="BL_DEPT != null">
+                #{BL_DEPT},
+            </if>
+            <if test="REC_DEPT != null and REC_DEPT != ''">
+                #{REC_DEPT},
+            </if>
+        </trim>
+        )
+    </insert>
+
+    <!--获取客户编码-->
+    <select id="getCustomerCode" resultType="java.lang.String">
+        SELECT   'C' || LPAD(NVL(MAX(SUBSTR(CUSTOMER_CODE, -12)), 0) + 1, 12, 0) AS CUSTOMERCODE
+        FROM TAB_CUSTOMER T WHERE 1 = 1 AND REGEXP_LIKE(T.CUSTOMER_CODE, '[0-9]{12}$')
+    </select>
+
+    <!--生成团队编码-->
+    <select id="getGroupId" resultType="java.lang.String">
+        SELECT SEQ_WX_GROUP.NEXTVAL from DUAL
+    </select>
+
+    <!--根据客户编码查询账号及密码-->
+    <select id="getUserMonthly" parameterType="java.lang.String" resultType="java.util.Map">
+        SELECT T.USER_ACCT, T.LOGIN_PW, T.USER_NAME, T.USER_NAME
+            FROM T_SYS_USER T
+        WHERE T.LOGIN_FLAG = 1 AND T.REC_FLAG = 1 AND T.PLATFORM_CODE = 1
+            AND T.USER_ACCT = #{customerCode}
+    </select>
+
+    <!--记录订单的打印日志（触发器回写打印标识）-->
+    <insert id="insertPrintLog" parameterType="java.util.Map">
+        INSERT INTO TAB_PRINT_LOG T (
+        <trim suffixOverrides=",">
+            <if test="ORDER_CODE != null and ORDER_CODE != ''">
+                T.ORDER_CODE,
+            </if>
+            <if test="BILL_CODE != null and BILL_CODE != ''">
+                T.BILL_CODE,
+            </if>
+            <if test="PRINT_MAN != null and PRINT_MAN != ''">
+                T.PRINT_MAN,
+            </if>
+            <if test="PRINT_MAN_CODE != null and PRINT_MAN_CODE != ''">
+                T.PRINT_MAN_CODE,
+            </if>
+            <if test="PRINT_SITE != null and PRINT_SITE != ''">
+                T.PRINT_SITE,
+            </if>
+            <if test="PRINT_SITE_CODE != null and PRINT_SITE_CODE != ''">
+                T.PRINT_SITE_CODE,
+            </if>
+            <if test="PRINT_DATE != null">
+                T.PRINT_DATE,
+            </if>
+            <if test="PRINT_TYPE != null and PRINT_TYPE != ''">
+                T.PRINT_TYPE,
+            </if>
+            <if test="PRINT_DATA_FROM != null and PRINT_DATA_FROM != ''">
+                T.PRINT_DATA_FROM,
+            </if>
+            <if test="PRINT_DATA_TYPE != null and PRINT_DATA_TYPE != ''">
+                T.PRINT_DATA_TYPE,
+            </if>
+        </trim>
+        )VALUES(
+        <trim suffixOverrides=",">
+            <if test="ORDER_CODE != null and ORDER_CODE != ''">
+                #{ORDER_CODE},
+            </if>
+            <if test="BILL_CODE != null and BILL_CODE != ''">
+                #{BILL_CODE},
+            </if>
+            <if test="PRINT_MAN != null and PRINT_MAN != ''">
+                #{PRINT_MAN},
+            </if>
+            <if test="PRINT_MAN_CODE != null and PRINT_MAN_CODE != ''">
+                #{PRINT_MAN_CODE},
+            </if>
+            <if test="PRINT_SITE != null and PRINT_SITE != ''">
+                #{PRINT_SITE},
+            </if>
+            <if test="PRINT_SITE_CODE != null and PRINT_SITE_CODE != ''">
+                #{PRINT_SITE_CODE},
+            </if>
+            <if test="PRINT_DATE != null">
+                #{PRINT_DATE},
+            </if>
+            <if test="PRINT_TYPE != null and PRINT_TYPE != ''">
+                #{PRINT_TYPE},
+            </if>
+            <if test="PRINT_DATA_FROM != null and PRINT_DATA_FROM != ''">
+                #{PRINT_DATA_FROM},
+            </if>
+            <if test="PRINT_DATA_TYPE != null and PRINT_DATA_TYPE != ''">
+                #{PRINT_DATA_TYPE},
+            </if>
+        </trim>
+        )
+    </insert>
+
+    <!--根据订单号查询运单号-->
+    <select id="getOrderByOrderCode" parameterType="java.util.List" resultType="com.zhitengda.entity.Order">
+        SELECT ORDER_BILL,
+                BILL_CODE
+        FROM TAB_ORDER
+        <where>
+            <if test="list != null">
+                ORDER_BILL IN
+                <foreach collection="list" item="orderBill" separator="," open="("  close=")">
+                    #{orderBill}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <!--添加投诉建议-->
+    <insert id="addWxAdvice" parameterType="com.zhitengda.entity.WxAdvice">
+        INSERT INTO TAB_WX_ADVICE T (
+        <trim suffixOverrides=",">
+            <if test="openId != null and openId != ''">
+                T.OPEN_ID,
+            </if>
+            <if test="type != null">
+                T.TYPE,
+            </if>
+            <if test="content != null and content != ''">
+                T.CONTENT,
+            </if>
+        </trim>
+        )VALUES(
+        <trim suffixOverrides=",">
+            <if test="openId != null and openId != ''">
+                #{openId},
+            </if>
+            <if test="type != null">
+                #{type},
+            </if>
+            <if test="content != null and content != ''">
+                #{content},
+            </if>
+        </trim>
+        )
+    </insert>
+
+    <!--校验用户是否已经在通过大网验证的实名表中TAB_REAL_NAME-->
+    <select id="getCheckRealName" parameterType="com.zhitengda.entity.BigNetRealName" resultType="com.zhitengda.entity.BigNetRealName">
+        SELECT GUID,
+               TYPE,
+               CARD_TYPE,
+               SID,
+               SEX,
+               NATIONALITY,
+               CARD_ADDRESS,
+               CUSTOMER_NAME,
+               CUSTOMER_PHONE,
+               BL_AUDIT,
+               AUDIT_DATE,
+               CREATE_MAN,
+               CREATE_MAN_CODE,
+               CREATE_SITE,
+               CREATE_SITE_CODE,
+               CREATE_DATE,
+               MODIFY_MAN,
+               MODIFY_MAN_CODE,
+               MODIFY_SITE,
+               MODIFY_SITE_CODE,
+               MODIFY_DATE,
+               V_SOURCE,
+               OPEN_ID
+        FROM TAB_REAL_NAME
+        <where>
+            <if test="customerName != null and customerName != ''">
+                AND CUSTOMER_NAME = #{customerName}
+            </if>
+            <if test="sid != null and sid != ''">
+                AND SID = #{sid}
+            </if>
+            <if test="blAudit != null">
+                AND BL_AUDIT = #{blAudit}
+            </if>
+            AND ROWNUM = 1
+        </where>
+    </select>
+
+    <!--添加实名到大网记录表TAB_REAL_NAME-->
+    <insert id="addCheckRealName" parameterType="com.zhitengda.entity.BigNetRealName">
+        INSERT INTO TAB_REAL_NAME T (
+        <trim suffixOverrides=",">
+            <if test="type != null and type != ''">
+                T.TYPE,
+            </if>
+            <if test="cardType != null and cardType != ''">
+                T.CARD_TYPE,
+            </if>
+            <if test="sid != null and sid != ''">
+                T.SID,
+            </if>
+            <if test="sex != null and sex != ''">
+                T.SEX,
+            </if>
+            <if test="nationality != null and nationality != ''">
+                T.NATIONALITY,
+            </if>
+            <if test="cardAddress != null and cardAddress != ''">
+                T.CARD_ADDRESS,
+            </if>
+            <if test="customerName != null and customerName != ''">
+                T.CUSTOMER_NAME,
+            </if>
+            <if test="customerPhone != null and customerPhone != ''">
+                T.CUSTOMER_PHONE,
+            </if>
+            <if test="blAudit != null">
+                T.BL_AUDIT,
+            </if>
+            <if test="auditDate != null">
+                T.AUDIT_DATE,
+            </if>
+            <if test="createMan != null and createMan != ''">
+                T.CREATE_MAN,
+            </if>
+            <if test="vSource != null and vSource != ''">
+                T.V_SOURCE,
+            </if>
+            <if test="openId != null and openId != ''">
+                T.OPEN_ID,
+            </if>
+        </trim>
+        )VALUES(
+        <trim suffixOverrides=",">
+            <if test="type != null and type != ''">
+                #{type},
+            </if>
+            <if test="cardType != null and cardType != ''">
+                #{cardType},
+            </if>
+            <if test="sid != null and sid != ''">
+                #{sid},
+            </if>
+            <if test="sex != null and sex != ''">
+                #{sex},
+            </if>
+            <if test="nationality != null and nationality != ''">
+                #{nationality},
+            </if>
+            <if test="cardAddress != null and cardAddress != ''">
+                #{cardAddress},
+            </if>
+            <if test="customerName != null and customerName != ''">
+                #{customerName},
+            </if>
+            <if test="customerPhone != null and customerPhone != ''">
+                #{customerPhone},
+            </if>
+            <if test="blAudit != null">
+                #{blAudit},
+            </if>
+            <if test="auditDate != null">
+                #{auditDate},
+            </if>
+            <if test="createMan != null and createMan != ''">
+                #{createMan},
+            </if>
+            <if test="vSource != null and vSource != ''">
+                #{vSource},
+            </if>
+            <if test="openId != null and openId != ''">
+                #{openId},
+            </if>
+        </trim>
+        )
+    </insert>
+
+    <!--更新实名到大网记录表TAB_REAL_NAME-->
+    <update id="uptCheckRealName" parameterType="com.zhitengda.entity.BigNetRealName">
+        update TAB_REAL_NAME set
+        <trim suffixOverrides=",">
+            <if test="blAudit != null">BL_AUDIT = #{blAudit},</if>
+            <if test="auditDate != null">AUDIT_DATE = #{auditDate},</if>
+            <if test="modifyMan != null">MODIFY_MAN = #{modifyMan},</if>
+            <if test="modifyDate != null">MODIFY_DATE = #{modifyDate},</if>
+            <if test="openId != null">OPEN_ID = #{openId},</if>
+        </trim>
+        where GUID = #{guid}
+    </update>
+
+    <!--校验网点预付款账户是否欠费：目前结算余额 <= 警戒结算金额-->
+    <select id="checkSiteAccOwe" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1)
+            FROM TAB_BALANCE_ACCOUNT T
+         WHERE SITE_NAME_CODE = #{sendSiteCode}
+            AND T.BL_OPEN = 1
+            AND CUR_MONEY &lt;= WATCH_MONEY
+    </select>
+
+    <!--校验网点COD账户是否欠费：COD目前结算余额 <= COD警戒结算金额-->
+    <select id="checkSiteCodOwe" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(1)
+            FROM TAB_BALANCE_ACCOUNT_HK T
+         WHERE SITE_NAME_CODE = #{sendSiteCode}
+            AND T.BL_OPEN = 1
+            AND CUR_MONEY &lt; WATCH_MONEY
+    </select>
+
+    <!--查询系统常规设置-->
+    <select id="getShareSet" parameterType="java.lang.String" resultType="com.zhitengda.entity.SysShareSet">
+        SELECT * FROM T_SYS_SHARE_SET WHERE SHARE_CODE = #{shareCode}
+    </select>
+</mapper>

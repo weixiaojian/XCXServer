@@ -1,0 +1,340 @@
+八月 18, 2021 2:05:59 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find java src paths:  [E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\]
+八月 18, 2021 2:05:59 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: project type not set, try to figure out...
+八月 18, 2021 2:05:59 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start find controllers in path : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : IndexController.java
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : OrderController.java
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : UserController.java
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : IndexController.java
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:00 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:01 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:02 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : IndexController.java
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : OrderController.java
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:03 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:04 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:04 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:04 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:05 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:05 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:05 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:05 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:06 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:07 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : OrderController.java
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : UserController.java
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:08 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: we think Object should not be an enum type
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils warn
+警告: warning!! Cannot find java file , in java file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\util\RetResult.java, className : Object, we cannot found more information of it, you've better to make it a JavaBean
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : UserController.java
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs start...
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\controller\IndexController.java
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\controller\IndexController.java
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\controller\OrderController.java
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\controller\OrderController.java
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\controller\UserController.java
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : E:\idea-work\ztd\yunda\YDTCPXCXServer\src\main\java\com\zhitengda\controller\UserController.java
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index start !!!
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index done !!!
+八月 18, 2021 2:06:09 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs done !!!

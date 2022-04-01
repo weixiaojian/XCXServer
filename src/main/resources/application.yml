@@ -1,0 +1,8 @@
+#-------------------------更新步骤-------------------------
+#1.修改yml中的active
+#2.修改com.zhitengda.ztdCloud.CloudParam中的网关地址
+#3.注释掉logback-spring.xml中的<appender-ref ref="stdout" />
+#---------------------------------------------------------
+spring:
+  profiles:
+    active: dev

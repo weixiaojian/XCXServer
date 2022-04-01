@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>UserController</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="PR.prettyPrint()">
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                YDTCPXCXServer
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/YeDaxia/JApiDocs" target="_blank">GitHub</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">V1.0<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="book with-summary">
+    <div class="book-summary">
+<div class="search-box form-group">
+    <input type="text" class="form-control" id="inputSearch" placeholder="搜索接口">
+    <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+</div>
+<div id="accordion" class="catalog">
+        <div class="panel">
+            <div id="heading0" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse0" aria-controls="collapse0">
+                <i class="glyphicon glyphicon-align-justify"></i> IndexController
+            </div>
+            <div id="collapse0" class="collapse in " aria-labelledby="heading0">
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getAccessToken">
+                        获取AccessToken
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#subscribeMsg">
+                        发送订阅消息（下单成功）
+模板id：liHLQynBfGrxej6VxnD5GrT0BbCbdoZHsWwafrKg1s8
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#addressAnalysis">
+                        地址解析接口
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#addressAnalysisList">
+                        批量地址解析接口，地址以"；"分割（中文分号）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#imgAnalysis">
+                        图片识别文字
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getAddress">
+                        获取地址分页数据（寄/收）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#qryAddressByDefault">
+                        查询默认地址
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#addAddress">
+                        保存地址簿数据
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#editAddress">
+                        更新地址簿数据
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#editDefault">
+                        修改用户默认地址
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#delAddress">
+                        删除地址簿数据
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#checkProvince">
+                        校验省-市-区是否合法，并返回对应的code
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getProvinceList">
+                        获取省-市-区集合数据（树形结构）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getTown">
+                        根据区code获取街道
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getSite">
+                        根据编码查询网点
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getEmployee">
+                        根据编码查询员工
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getSiteByAddress">
+                        区域查询
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getAuditCount">
+                        查询当前待审核的总数（只有超级管理员才有这个权限）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getWxGroupByOpenId">
+                        查询当前用户是否有团队信息
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getWxGroupByIdOrName">
+                        根据团队ID或名称查询团队信息（查询团队ID、团队名称、是否共享电子面单）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getWxGroupByName">
+                        根据昵称查询团队成员信息
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#getWxGroupList">
+                        根据团队ID获取团队成员列表
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#createWxGroup">
+                        创建团队
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#addWxGroup">
+                        加入团队
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#auditWxGroup">
+                        审核团队成员
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#turnDownWxGroup">
+                        拒绝团队成员
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#updateNickName">
+                        修改自己或团队成员的昵称
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#updateSatus">
+                        修改团队成员的权限状态
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#emptyWxGroup">
+                        解散团队
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#deleteWxGroup">
+                        移除团队成员/退出团队
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#editGroupName">
+                        修改团队名称（超级管理员权限）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#editGroupBlShare">
+                        更改共享电子面单开关（超级管理员权限）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#editGroupBlAudit">
+                        更改是否需要审批开关（管理员权限）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_IndexController.html#generateGroupQrCode">
+                        生成二维码(https://cityexp-mp.yundasys.com/YDTCPXCXServer/scanGroup/)
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading1" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse1" aria-controls="collapse1">
+                <i class="glyphicon glyphicon-align-justify"></i> OrderController
+            </div>
+            <div id="collapse1" class="collapse " aria-labelledby="heading1">
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getOrderConstant">
+                        获取下单常量字典配置
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#trackFreight">
+                        计算运费/到付款
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#saveOrder">
+                        保存订单数据
+1.校验运单号是否使用
+2.获取单号
+3.调用匹配揽派接口
+ 3.1揽件件网点/派件网点赋值，为空则赋值 “*”
+4.调用云下单接口
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#saveOrderList">
+                        批量下单接口
+1.获取单号，揽派匹配参数封装，将订单数据转换为map方便后面查询失败的单（key为orderBill）
+2.调用匹配揽派接口（批量）
+ 2.1将揽派匹配的结果转换成map 订单号orderBill为key
+3.将揽派匹配结果回填到订单中、填充云下单接口所需参数
+ 3.1揽件件网点/派件网点赋值，为空则赋值 “*”
+4.云下单接口参数准备
+ 4.1获取用户实名数据
+ 4.2调用云下单接口
+ 4.3调用云下单返回解析（找出失败的订单）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#updateOrder">
+                        修改订单数据
+1.根据订单号查询订单数据
+2.比较寄/收件市、区、街道、详细地址是否改变
+ 2.1如果有修改就重新调用揽派匹配接口
+3.付款方式改变，费用和到付款其中一个需要置未0（根据付款方式决定）
+4.调用云修改订单接口
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#copyOrder">
+                        复制原有订单信息生成新的订单
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#cancelOrder">
+                        取消订单
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#downOrderExcel">
+                        excel下单模板下载
+http://127.0.0.1:8081/YDTCPXCXServer/order/excelTemplate/快递寄件模板.xlsx
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#importExcel">
+                        excel导入下单解析
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getMyOrder">
+                        查询未打印/已打印 分页数据
+1.个人模式下：直接传当前用户的openId过来查询未打印/已打印的订单
+2.团队模式下：
+	a.管理员查所有：传团队Id即可 openId不赋值
+	b.管理员查指定成员：传团队Id + openId
+	c.普通成员：传团队Id + openId
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getOrderByOrderBill">
+                        根据订单号查询订单详情
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getOrderPrint">
+                        根据订单号集合获取运单打印List数据
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#checkBillCode">
+                        校验运单号是否被使用
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getScanBillCode">
+                        根据运单号获取物流轨迹
+1.先根据用户输入的Code查出订单号和运单号
+2.根据订单号查询出订单数据、寄件地址、收件地址、状态、
+3.根据运单号查询轨迹
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getMyOrderCount">
+                        统计我寄的和我收的总数
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getMyWaybill">
+                        分页查询我的运单
+运单状态：全部、已揽收、在途、已派件、已签收
+1.个人模式下：直接传当前用户的openId过来查询运单
+2.团队模式下：
+	a.管理员查所有：传团队Id即可 openId不赋值
+	b.管理员查指定成员：传团队Id + openId
+	c.普通成员：传团队Id + openId
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#updateBlPrint">
+                        更改订单的打印状态
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getTrajectory">
+                        对外单独的轨迹查询接口（可查所有订单）
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#addWxRemark">
+                        添加微信快捷备注
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#getWxRemarks">
+                        获取微信快捷备注列表
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_OrderController.html#delWxRemark">
+                        删除快捷备注
+                    </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="heading2" data-parent="#accordion" class="catalog-title" data-toggle="collapse"
+                 aria-expanded="true" data-target="#collapse2" aria-controls="collapse2">
+                <i class="glyphicon glyphicon-align-justify"></i> UserController
+            </div>
+            <div id="collapse2" class="collapse in " aria-labelledby="heading2">
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#getOpenIdByCode">
+                        根据wx.login()的code 获取openid、session_key、unionid
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#decryptPhone">
+                        解密用户手机号(同时保存用户数据)
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#updateUser">
+                        更新用户的头像 昵称
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#getUser">
+                        获取用户信息
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#getUserByPhone">
+                        根据手机号获取用户信息
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#getUserInfo">
+                        解密小程序的用户信息  此处的unionid一定不为空
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#editLogin">
+                        退出登陆
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#realIdPage">
+                        实名认证分页数据
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#getRealId">
+                        获取实名认证
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#addRealId">
+                        添加/修改 实名认证
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#delRealId">
+                        删除实名认证
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#binDingEmp">
+                        模糊查询员工数据
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#binDingEmp">
+                        绑定专属快递员
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#scanBinDingEmp">
+                        扫码绑定专属快递员
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#unbindEmp">
+                        解绑专属快递员
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#getMessagesSet">
+                        获取用户消息设置信息
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#saveMsgSet">
+                        保存/更新消息设置信息
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#bindCustomer">
+                        用户绑定月结客户账号
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#unBindCustomer">
+                        解除月结客户账号绑定
+                    </a>
+                    <a class="catalog-item" href="com_zhitengda_controller_UserController.html#addWxAdvice">
+                        添加投诉建议
+                    </a>
+            </div>
+        </div>
+</div>    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+                <div class="d-flex justify-content-between">
+                    <a class="header-menu toggle-catalog" href="javascript:void(0)"><i
+                            class="glyphicon glyphicon-align-justify"></i> 目录</a>
+                </div>
+            </div>
+            <div class="page-wrapper">
+                <div class="page-inner">
+                    <div class="action-list">
+                        <div class="action-item">
+<h2 id="getOpenIdByCode"><a href="#">根据wx.login()的code 获取openid、session_key、unionid </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/getOpenIdByCode</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>code</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_getOpenIdByCode_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_getOpenIdByCode_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="decryptPhone"><a href="#">解密用户手机号(同时保存用户数据) </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/decryptPhone</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>openId</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>unionId</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>sessionKey</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>encryptedData</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>iv</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_decryptPhone_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_decryptPhone_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="updateUser"><a href="#">更新用户的头像 昵称 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/updateUser</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>openId</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>headImgUrl</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>nickName</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_updateUser_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_updateUser_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="getUser"><a href="#">获取用户信息 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/getUser</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_getUser_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_getUser_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="getUserByPhone"><a href="#">根据手机号获取用户信息 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/getUserByPhone</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_getUserByPhone_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_getUserByPhone_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="getUserInfo"><a href="#">解密小程序的用户信息  此处的unionid一定不为空 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/getUserInfo</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>encryptedData</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>加密的数据</td>
+                </tr>
+                <tr>
+                    <td>iv</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>密钥</td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_getUserInfo_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_getUserInfo_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="editLogin"><a href="#">退出登陆 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/logOut</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_editLogin_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_editLogin_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="realIdPage"><a href="#">实名认证分页数据 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/realIdPage</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>pageNum</td>
+                    <td>int</td>
+                    <td>否</td>
+                    <td>起始页</td>
+                </tr>
+                <tr>
+                    <td>pageSize</td>
+                    <td>int</td>
+                    <td>否</td>
+                    <td>每页显示条数</td>
+                </tr>
+                <tr>
+                    <td>orderByColumn</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>排序列</td>
+                </tr>
+                <tr>
+                    <td>isAsc</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>排序的方向desc或者asc</td>
+                </tr>
+                <tr>
+                    <td>openId</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>openId</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>姓名</td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>手机号</td>
+                </tr>
+                <tr>
+                    <td>blType</td>
+                    <td>int</td>
+                    <td>否</td>
+                    <td>0 未打印，1 已打印，2 已取消</td>
+                </tr>
+                <tr>
+                    <td>billCode</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>运单号</td>
+                </tr>
+                <tr>
+                    <td>billStatus</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>运单状态：全部、已揽收、在途、已派件、已签收</td>
+                </tr>
+                <tr>
+                    <td>startDate</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>起始时间</td>
+                </tr>
+                <tr>
+                    <td>endDate</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>终止时间</td>
+                </tr>
+                <tr>
+                    <td>groupId</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>团队Id</td>
+                </tr>
+                <tr>
+                    <td>sendSiteCode</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>寄件网点编码</td>
+                </tr>
+                <tr>
+                    <td>customerCode</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td>寄件客户编码</td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_realIdPage_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_realIdPage_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="getRealId"><a href="#">获取实名认证 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/getRealId</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>phone</td>
+                    <td>string</td>
+                    <td>否</td>
+                    <td></td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_getRealId_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_getRealId_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="addRealId"><a href="#">添加/修改 实名认证 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/addRealId</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>请求参数</strong></p>
+            <pre class="prettyprint lang-json">{
+	"guid":"string //guid",
+	"openId":"string //微信openid",
+	"realName":"string //姓名【必须】",
+	"phone":"string //手机号【必须】",
+	"realIdType":"string //证件类型",
+	"realIdCode":"string //证件号码【必须】",
+	"sex":"int //1男 0女",
+	"national":"string //民族",
+	"realIdAddress":"string //证件地址",
+	"remark":"string",
+	"createDate":"date",
+	"updateDate":"date"
+}</pre>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_addRealId_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_addRealId_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="delRealId"><a href="#">删除实名认证 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/delRealId</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>guid</td>
+                    <td>string</td>
+                    <td>是</td>
+                    <td></td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_delRealId_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_delRealId_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="binDingEmp"><a href="#">模糊查询员工数据 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/getEmpBylike</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>请求参数</strong></p>
+            <pre class="prettyprint lang-json">{
+	"employeeCode":"string //员工编号",
+	"employeeName":"string //员工名称",
+	"ownerSite":"string //所属网点",
+	"deptName":"string //部门名称",
+	"phone":"string //联系电话",
+	"mobilePhone":"string //员工手机",
+	"address":"string //联系住址",
+	"barPassword":"string //巴枪操作密码",
+	"employeeType":"string //员工类型(仓库操作员 、 取派员、双重身份)",
+	"ownerRange":"string //所属承包区",
+	"ownerRangeCode":"string //所属承包区CODE",
+	"ownerSiteCode":"string //所属网点CODE",
+	"ePwd":"string //登录密码",
+	"eComputid":"string //与该用户相应的机器ID，以此限制一个用户只能在第一次登录的电脑",
+	"ePwdUpdateDate":"date //登陆密码最后修改时间",
+	"sex":"string //性别（1代表男，0代表女）",
+	"stature":"string //身高",
+	"avoirdupois":"string //体重",
+	"dressSize":"string //服装尺码",
+	"identityCard":"string //身份证号码",
+	"drivingLicence":"string //员工账户编号",
+	"openBank":"string //开户行",
+	"openAccount":"string //开户账户",
+	"alipay":"string //支付宝帐号",
+	"certifiedPhone":"string //认证手机",
+	"realName":"string //真实姓名",
+	"posCode":"string //POS机编号",
+	"pdaCode":"string //手持终端编号",
+	"updatebase":"int //是否强制更新基础数据",
+	"updatedll":"int //是否强制更新DLL",
+	"blOperation":"int //是否接单员",
+	"blOpen":"int //是否启用标识(1：启用，0：停用)",
+	"birthDate":"date //出生日期",
+	"entryDate":"date //入职日期",
+	"endDate":"date //合同日期",
+	"range":"string //收派范围",
+	"remark":"string //备注",
+	"createDate":"date //创建日期",
+	"createMan":"string //创建人",
+	"createSite":"string //创建网点",
+	"createSiteCode":"string //创建网点CODE",
+	"modifyDate":"date //修改时间",
+	"modifyMan":"string //修改人",
+	"modifyManCode":"string //修改人CODE",
+	"modifySite":"string //修改网点",
+	"modifySiteCode":"string //修改网点CODE",
+	"rId":"string //角色ID 多个角色用逗号分隔",
+	"blComputid":"int //是否启用验证机器ID",
+	"empId":"int //员工ID",
+	"blNotice":"int //是否接收消息标识（1：接收，0：不接收）",
+	"email":"string //联系邮箱  --加密",
+	"sync":"int",
+	"blPushEmp":"int //是否已推送员工信息标识（0：未推送，1：已推送）",
+	"createManCode":"string //创建人CODE",
+	"blErpNotice":"int //是否接收ERP处理消息标识（1：接收，0：不接收）",
+	"blOperationPost":"int //是否经营支持岗标识（1：是，0：否）",
+	"threeCode":"string //三段码名称"
+}</pre>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_binDingEmp_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_binDingEmp_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="binDingEmp"><a href="#">绑定专属快递员 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/binDingEmp</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>请求参数</strong></p>
+            <pre class="prettyprint lang-json">{
+	"openId":"string //微信openID",
+	"phone":"string //手机号",
+	"siteCode":"string //网点编码",
+	"employeeCode":"string //员工编码",
+	"siteName":"string //绑定的网点名称",
+	"employeeName":"string //绑定的员工名称",
+	"isLogin":"int //是否登陆（１，是，０，否）",
+	"sessionKey":"string //微信返回的session_key",
+	"dataFrom":"string //数据来源",
+	"unionid":"string //unionid",
+	"sync":"int",
+	"createDate":"date",
+	"updateDate":"date",
+	"headimgurl":"string",
+	"nickName":"string",
+	"customerCode":"string //月结客户编码、名称",
+	"customerName":"string"
+}</pre>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_binDingEmp_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_binDingEmp_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="scanBinDingEmp"><a href="#">扫码绑定专属快递员 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/scanBinDingEmp</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>empCode</td>
+                    <td>string</td>
+                    <td>是</td>
+                    <td></td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_scanBinDingEmp_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_scanBinDingEmp_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="unbindEmp"><a href="#">解绑专属快递员 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/unbindEmp</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_unbindEmp_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_unbindEmp_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="getMessagesSet"><a href="#">获取用户消息设置信息 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/getMessagesSet</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_getMessagesSet_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_getMessagesSet_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="saveMsgSet"><a href="#">保存/更新消息设置信息 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/saveMsgSet</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>请求参数</strong></p>
+            <pre class="prettyprint lang-json">{
+	"openId":"string //openid",
+	"blSendOrder":"int //寄件人-揽收成功（1开启 0关闭）",
+	"blSendSign":"int //寄件人-签收成功（1开启 0关闭）",
+	"blSendDisp":"int //寄件人-快递派送（1开启 0关闭）",
+	"blRecOut":"int //收件人-快递发出（1开启 0关闭）",
+	"blRecDisp":"int //收件人-快递派送（1开启 0关闭）",
+	"blRecSign":"int //收件人-签收成功（1开启 0关闭）",
+	"createDate":"date //创建日 期",
+	"updateDate":"date //修改日期"
+}</pre>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_saveMsgSet_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_saveMsgSet_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="bindCustomer"><a href="#">用户绑定月结客户账号 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/bindCustomer</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>请求参数</strong></p>
+            <pre class="prettyprint lang-json">{
+	"customerCode":"string //客户编号",
+	"customerName":"string //客户名称",
+	"customerFullName":"string //客户全称",
+	"customerOwnerSite":"string //客户所属网点",
+	"customerOwnerSiteCode":"string //客户所属网点ID",
+	"customerBalanceMode":"string //客户结算类型 现金/支票/月结",
+	"customerLinkman":"string //客户联系人",
+	"customerPhone1":"string //客户电话1",
+	"customerPhone2":"string //客户电话2",
+	"customerFax":"string //客户传真",
+	"customerAddress":"string //客户地址",
+	"custSendAddress":"string //客户寄件地",
+	"customerType":"string //客户类型(VIP客户/代理等)",
+	"operationEmployee":"string //所属业务员",
+	"employeeCode":"string //业务员编号",
+	"fieldMan":"string //所属外务员",
+	"customerRebate":"double //客户折扣",
+	"balancePassword":"string //客户密码",
+	"postCode":"string //邮政编号",
+	"url":"string //网址",
+	"email":"string //E-Mail",
+	"bankCode":"string //开户银行卡号",
+	"bankName":"string //开户银行名称",
+	"bankAddress":"string //开户行地址",
+	"holder":"string //开户人",
+	"idCode":"string //开户人身份证号码",
+	"haccountType":"string //开户卡号账户类型（对公/对私）",
+	"blOpen":"int //是否启用(0.否 1.是)",
+	"customerSiteType":"string //客户分类(用于界面树形显示)",
+	"remark":"string //备注",
+	"guid":"string //GUID唯一值",
+	"customerLevel":"string //客户等级(钻石/铂金/黄金/白银/普通)",
+	"linkQq":"string //联系QQ",
+	"businessNumber":"string //营业执照号码",
+	"businessAddress":"string //注册地址",
+	"createMan":"string //创建人员姓名",
+	"createManCode":"string //创建人编号",
+	"createSite":"string //创建站点",
+	"createSiteCode":"string //创建站点编号",
+	"createDate":"date //创建时间",
+	"modifier":"string //修改人",
+	"modifierCode":"string //修改人CODE",
+	"modifyDate":"date //修改时间",
+	"modifySite":"string //修改站点",
+	"modifySiteCode":"string //修改站点CODE",
+	"country":"string //客户所属国家",
+	"province":"string //客户所属省份",
+	"city":"string //客户所属城市",
+	"county":"string //客户所属区县",
+	"loginFlag":"string //是否允许登录[0:不允许,1:允许]",
+	"bankKey":"string //开户银行联行号",
+	"goodsPayment":"double //代收货款服务费",
+	"feePercentage":"double //服务费百分比",
+	"rebateCycle":"string //返款周期（默认值T+3【T+0、T+1、T+2、T+3】",
+	"blAllowAgentMoney":"int //是否允许代收货款 0-不允许 1-允许",
+	"blAllowTopayment":"int //是否允许到付 0-不允许  1-允许",
+	"sync":"int",
+	"realName":"string //实名发件人",
+	"realIdCode":"string //实名发件人证件号码",
+	"realIdType":"string //实名发件人证件类型，关联数据字典t_sys_dictionary_detail.dic_code=\"ID_TYPE\"",
+	"blCert":"int //是否实名认证标识，空或者0标识未实名，1标识已实名",
+	"certDate":"date //实名认证时间",
+	"blProjectCustomer":"int //是否为项目客户  1 是",
+	"blMultiple":"int //是否支持一票多件 1 是",
+	"vendorCode":"string //商家编码：关联TAB_PLATFORM_POP_APPLY中的  VENDOR_CODE",
+	"interfaceKey":"string //用户接口秘钥",
+	"blCheckEleCount":"int //是否检查面单额度[1.是,0.否]",
+	"blCheckAccount":"int //是否检查预付款额度[1.是,0.否]",
+	"blCheckCenterComeDate":"int //算费是否检查分拨到件时间"
+}</pre>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_bindCustomer_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_bindCustomer_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="unBindCustomer"><a href="#">解除月结客户账号绑定 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/unBindCustomer</code>
+        <span class="label label-default">GET</span>
+</p>
+    <p><strong>请求参数</strong></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>参数名</th>
+                <th>类型</th>
+                <th>必须</th>
+                <th>描述</th>
+            </tr>
+                <tr>
+                    <td>customerCode</td>
+                    <td>string</td>
+                    <td>是</td>
+                    <td></td>
+                </tr>
+        </table>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_unBindCustomer_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_unBindCustomer_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                        <div class="action-item">
+<h2 id="addWxAdvice"><a href="#">添加投诉建议 </a></h2>
+    <p class="text-muted"><em>作者: langao_q</em></p>
+<p><strong>请求URL</strong></p>
+<p>
+    <code>/user/addWxAdvice</code>
+        <span class="label label-default">POST</span>
+</p>
+    <p><strong>请求参数</strong></p>
+            <pre class="prettyprint lang-json">{
+	"guid":"string //主键",
+	"openId":"string //微信用户标识【必须】",
+	"type":"int //问题类型【必须】",
+	"content":"string //建议内容【必须】",
+	"createDate":"date //创建时间"
+}</pre>
+    <p><strong>返回结果</strong></p>
+    <pre class="prettyprint lang-json">{
+	"code":"int",
+	"message":"string",
+	"data":{}
+}</pre>
+        <div class="form-group">
+            <a type="button" class="btn btn-sm btn-default" href="javaCodes/com_zhitengda_controller_UserController_addWxAdvice_RetResult.html"><i class="fa fa-android" aria-hidden="true"></i> Android Model</a>
+            <a type="button" class="btn btn-sm btn-default" href="iosCodes/com_zhitengda_controller_UserController_addWxAdvice_RetResult.html"><i class="fa fa-apple" aria-hidden="true"></i> iOS Model</a>
+        </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+<script>
+
+    var search_source_data = [
+            {name: 'IndexController.获取AccessToken', url: 'com_zhitengda_controller_IndexController.html#getAccessToken'},
+            {name: 'IndexController.发送订阅消息（下单成功）
+模板id：liHLQynBfGrxej6VxnD5GrT0BbCbdoZHsWwafrKg1s8', url: 'com_zhitengda_controller_IndexController.html#subscribeMsg'},
+            {name: 'IndexController.地址解析接口', url: 'com_zhitengda_controller_IndexController.html#addressAnalysis'},
+            {name: 'IndexController.批量地址解析接口，地址以"；"分割（中文分号）', url: 'com_zhitengda_controller_IndexController.html#addressAnalysisList'},
+            {name: 'IndexController.图片识别文字', url: 'com_zhitengda_controller_IndexController.html#imgAnalysis'},
+            {name: 'IndexController.获取地址分页数据（寄/收）', url: 'com_zhitengda_controller_IndexController.html#getAddress'},
+            {name: 'IndexController.查询默认地址', url: 'com_zhitengda_controller_IndexController.html#qryAddressByDefault'},
+            {name: 'IndexController.保存地址簿数据', url: 'com_zhitengda_controller_IndexController.html#addAddress'},
+            {name: 'IndexController.更新地址簿数据', url: 'com_zhitengda_controller_IndexController.html#editAddress'},
+            {name: 'IndexController.修改用户默认地址', url: 'com_zhitengda_controller_IndexController.html#editDefault'},
+            {name: 'IndexController.删除地址簿数据', url: 'com_zhitengda_controller_IndexController.html#delAddress'},
+            {name: 'IndexController.校验省-市-区是否合法，并返回对应的code', url: 'com_zhitengda_controller_IndexController.html#checkProvince'},
+            {name: 'IndexController.获取省-市-区集合数据（树形结构）', url: 'com_zhitengda_controller_IndexController.html#getProvinceList'},
+            {name: 'IndexController.根据区code获取街道', url: 'com_zhitengda_controller_IndexController.html#getTown'},
+            {name: 'IndexController.根据编码查询网点', url: 'com_zhitengda_controller_IndexController.html#getSite'},
+            {name: 'IndexController.根据编码查询员工', url: 'com_zhitengda_controller_IndexController.html#getEmployee'},
+            {name: 'IndexController.区域查询', url: 'com_zhitengda_controller_IndexController.html#getSiteByAddress'},
+            {name: 'IndexController.查询当前待审核的总数（只有超级管理员才有这个权限）', url: 'com_zhitengda_controller_IndexController.html#getAuditCount'},
+            {name: 'IndexController.查询当前用户是否有团队信息', url: 'com_zhitengda_controller_IndexController.html#getWxGroupByOpenId'},
+            {name: 'IndexController.根据团队ID或名称查询团队信息（查询团队ID、团队名称、是否共享电子面单）', url: 'com_zhitengda_controller_IndexController.html#getWxGroupByIdOrName'},
+            {name: 'IndexController.根据昵称查询团队成员信息', url: 'com_zhitengda_controller_IndexController.html#getWxGroupByName'},
+            {name: 'IndexController.根据团队ID获取团队成员列表', url: 'com_zhitengda_controller_IndexController.html#getWxGroupList'},
+            {name: 'IndexController.创建团队', url: 'com_zhitengda_controller_IndexController.html#createWxGroup'},
+            {name: 'IndexController.加入团队', url: 'com_zhitengda_controller_IndexController.html#addWxGroup'},
+            {name: 'IndexController.审核团队成员', url: 'com_zhitengda_controller_IndexController.html#auditWxGroup'},
+            {name: 'IndexController.拒绝团队成员', url: 'com_zhitengda_controller_IndexController.html#turnDownWxGroup'},
+            {name: 'IndexController.修改自己或团队成员的昵称', url: 'com_zhitengda_controller_IndexController.html#updateNickName'},
+            {name: 'IndexController.修改团队成员的权限状态', url: 'com_zhitengda_controller_IndexController.html#updateSatus'},
+            {name: 'IndexController.解散团队', url: 'com_zhitengda_controller_IndexController.html#emptyWxGroup'},
+            {name: 'IndexController.移除团队成员/退出团队', url: 'com_zhitengda_controller_IndexController.html#deleteWxGroup'},
+            {name: 'IndexController.修改团队名称（超级管理员权限）', url: 'com_zhitengda_controller_IndexController.html#editGroupName'},
+            {name: 'IndexController.更改共享电子面单开关（超级管理员权限）', url: 'com_zhitengda_controller_IndexController.html#editGroupBlShare'},
+            {name: 'IndexController.更改是否需要审批开关（管理员权限）', url: 'com_zhitengda_controller_IndexController.html#editGroupBlAudit'},
+            {name: 'IndexController.生成二维码(https://cityexp-mp.yundasys.com/YDTCPXCXServer/scanGroup/)', url: 'com_zhitengda_controller_IndexController.html#generateGroupQrCode'},
+            {name: 'OrderController.获取下单常量字典配置', url: 'com_zhitengda_controller_OrderController.html#getOrderConstant'},
+            {name: 'OrderController.计算运费/到付款', url: 'com_zhitengda_controller_OrderController.html#trackFreight'},
+            {name: 'OrderController.保存订单数据
+1.校验运单号是否使用
+2.获取单号
+3.调用匹配揽派接口
+ 3.1揽件件网点/派件网点赋值，为空则赋值 “*”
+4.调用云下单接口', url: 'com_zhitengda_controller_OrderController.html#saveOrder'},
+            {name: 'OrderController.批量下单接口
+1.获取单号，揽派匹配参数封装，将订单数据转换为map方便后面查询失败的单（key为orderBill）
+2.调用匹配揽派接口（批量）
+ 2.1将揽派匹配的结果转换成map 订单号orderBill为key
+3.将揽派匹配结果回填到订单中、填充云下单接口所需参数
+ 3.1揽件件网点/派件网点赋值，为空则赋值 “*”
+4.云下单接口参数准备
+ 4.1获取用户实名数据
+ 4.2调用云下单接口
+ 4.3调用云下单返回解析（找出失败的订单）', url: 'com_zhitengda_controller_OrderController.html#saveOrderList'},
+            {name: 'OrderController.修改订单数据
+1.根据订单号查询订单数据
+2.比较寄/收件市、区、街道、详细地址是否改变
+ 2.1如果有修改就重新调用揽派匹配接口
+3.付款方式改变，费用和到付款其中一个需要置未0（根据付款方式决定）
+4.调用云修改订单接口', url: 'com_zhitengda_controller_OrderController.html#updateOrder'},
+            {name: 'OrderController.复制原有订单信息生成新的订单', url: 'com_zhitengda_controller_OrderController.html#copyOrder'},
+            {name: 'OrderController.取消订单', url: 'com_zhitengda_controller_OrderController.html#cancelOrder'},
+            {name: 'OrderController.excel下单模板下载
+http://127.0.0.1:8081/YDTCPXCXServer/order/excelTemplate/快递寄件模板.xlsx', url: 'com_zhitengda_controller_OrderController.html#downOrderExcel'},
+            {name: 'OrderController.excel导入下单解析', url: 'com_zhitengda_controller_OrderController.html#importExcel'},
+            {name: 'OrderController.查询未打印/已打印 分页数据
+1.个人模式下：直接传当前用户的openId过来查询未打印/已打印的订单
+2.团队模式下：
+	a.管理员查所有：传团队Id即可 openId不赋值
+	b.管理员查指定成员：传团队Id + openId
+	c.普通成员：传团队Id + openId', url: 'com_zhitengda_controller_OrderController.html#getMyOrder'},
+            {name: 'OrderController.根据订单号查询订单详情', url: 'com_zhitengda_controller_OrderController.html#getOrderByOrderBill'},
+            {name: 'OrderController.根据订单号集合获取运单打印List数据', url: 'com_zhitengda_controller_OrderController.html#getOrderPrint'},
+            {name: 'OrderController.校验运单号是否被使用', url: 'com_zhitengda_controller_OrderController.html#checkBillCode'},
+            {name: 'OrderController.根据运单号获取物流轨迹
+1.先根据用户输入的Code查出订单号和运单号
+2.根据订单号查询出订单数据、寄件地址、收件地址、状态、
+3.根据运单号查询轨迹', url: 'com_zhitengda_controller_OrderController.html#getScanBillCode'},
+            {name: 'OrderController.统计我寄的和我收的总数', url: 'com_zhitengda_controller_OrderController.html#getMyOrderCount'},
+            {name: 'OrderController.分页查询我的运单
+运单状态：全部、已揽收、在途、已派件、已签收
+1.个人模式下：直接传当前用户的openId过来查询运单
+2.团队模式下：
+	a.管理员查所有：传团队Id即可 openId不赋值
+	b.管理员查指定成员：传团队Id + openId
+	c.普通成员：传团队Id + openId', url: 'com_zhitengda_controller_OrderController.html#getMyWaybill'},
+            {name: 'OrderController.更改订单的打印状态', url: 'com_zhitengda_controller_OrderController.html#updateBlPrint'},
+            {name: 'OrderController.对外单独的轨迹查询接口（可查所有订单）', url: 'com_zhitengda_controller_OrderController.html#getTrajectory'},
+            {name: 'OrderController.添加微信快捷备注', url: 'com_zhitengda_controller_OrderController.html#addWxRemark'},
+            {name: 'OrderController.获取微信快捷备注列表', url: 'com_zhitengda_controller_OrderController.html#getWxRemarks'},
+            {name: 'OrderController.删除快捷备注', url: 'com_zhitengda_controller_OrderController.html#delWxRemark'},
+            {name: 'UserController.根据wx.login()的code 获取openid、session_key、unionid', url: 'com_zhitengda_controller_UserController.html#getOpenIdByCode'},
+            {name: 'UserController.解密用户手机号(同时保存用户数据)', url: 'com_zhitengda_controller_UserController.html#decryptPhone'},
+            {name: 'UserController.更新用户的头像 昵称', url: 'com_zhitengda_controller_UserController.html#updateUser'},
+            {name: 'UserController.获取用户信息', url: 'com_zhitengda_controller_UserController.html#getUser'},
+            {name: 'UserController.根据手机号获取用户信息', url: 'com_zhitengda_controller_UserController.html#getUserByPhone'},
+            {name: 'UserController.解密小程序的用户信息  此处的unionid一定不为空', url: 'com_zhitengda_controller_UserController.html#getUserInfo'},
+            {name: 'UserController.退出登陆', url: 'com_zhitengda_controller_UserController.html#editLogin'},
+            {name: 'UserController.实名认证分页数据', url: 'com_zhitengda_controller_UserController.html#realIdPage'},
+            {name: 'UserController.获取实名认证', url: 'com_zhitengda_controller_UserController.html#getRealId'},
+            {name: 'UserController.添加/修改 实名认证', url: 'com_zhitengda_controller_UserController.html#addRealId'},
+            {name: 'UserController.删除实名认证', url: 'com_zhitengda_controller_UserController.html#delRealId'},
+            {name: 'UserController.模糊查询员工数据', url: 'com_zhitengda_controller_UserController.html#binDingEmp'},
+            {name: 'UserController.绑定专属快递员', url: 'com_zhitengda_controller_UserController.html#binDingEmp'},
+            {name: 'UserController.扫码绑定专属快递员', url: 'com_zhitengda_controller_UserController.html#scanBinDingEmp'},
+            {name: 'UserController.解绑专属快递员', url: 'com_zhitengda_controller_UserController.html#unbindEmp'},
+            {name: 'UserController.获取用户消息设置信息', url: 'com_zhitengda_controller_UserController.html#getMessagesSet'},
+            {name: 'UserController.保存/更新消息设置信息', url: 'com_zhitengda_controller_UserController.html#saveMsgSet'},
+            {name: 'UserController.用户绑定月结客户账号', url: 'com_zhitengda_controller_UserController.html#bindCustomer'},
+            {name: 'UserController.解除月结客户账号绑定', url: 'com_zhitengda_controller_UserController.html#unBindCustomer'},
+            {name: 'UserController.添加投诉建议', url: 'com_zhitengda_controller_UserController.html#addWxAdvice'},
+    ];
+
+
+
+    $('.toggle-catalog').click(function () {
+        $('.book').toggleClass('with-summary');
+    });
+
+    $('#inputSearch').autocomplete({hint: false}, [
+        {
+            source: function (query, callback) {
+                var result = [];
+                for(var i = 0; i !== search_source_data.length; i++){
+                    if(search_source_data[i].name.indexOf(query) !== -1){
+                        result.push(search_source_data[i]);
+                    }
+                }
+                callback(result);
+            },
+            displayKey: 'name',
+            templates: {
+                suggestion: function (suggestion) {
+                    return suggestion.name;
+                }
+            }
+        }
+    ]).on('autocomplete:selected', function (event, suggestion, dataset, context) {
+        self.location = suggestion.url;
+    });
+</script>
+</body>
+</html>
